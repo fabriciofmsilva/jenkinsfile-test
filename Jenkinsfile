@@ -1,11 +1,16 @@
+#!groovy
 pipeline {
+
   agent any
 
   stages {
-    stage('Update packages') {
+
+    stage('Build') {
       steps {
-        bat 'npm install'
+        bat "npm install"
       }
     }
+
   }
+
 }
