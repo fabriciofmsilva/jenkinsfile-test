@@ -10,17 +10,25 @@ pipeline {
   //   git_commit_author_email = ''
   // }
 
-  // Build
   stages {
-    stage('Build') {
-      steps {
+    // checkout
+    stage('checkout') {
+      node('slave') {
         deleteDir()
         checkout scm
+      }
+      // steps {
+      // }
+    }
+
+    // Build
+    stage('Build') {
+      steps {
         bat "npm install"
       }
     }
 
-  // Static Code Analysis
+    // Static Code Analysis
     stage('Static Code Analysis') {
       steps {
         bat "npm run lint"
