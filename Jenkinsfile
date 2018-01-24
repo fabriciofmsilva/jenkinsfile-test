@@ -59,8 +59,24 @@ pipeline {
 
     // Deploy
     stage('Deploy') {
-      steps {
-        echo "Deployed"
+      parallel {
+        stage('Development') {
+          when {
+            branch 'develop'
+          }
+          steps {
+            echo "Deployed in development"
+          }
+        }
+
+        stage('Production') {
+          when {
+            branch 'master'
+          }
+          steps {
+            echo "Deployed in production"
+          }
+        }
       }
     }
   }
