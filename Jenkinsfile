@@ -10,15 +10,13 @@ pipeline {
   //   git_commit_author_email = ''
   // }
 
-  stages {
+  node('node') {
     // checkout
     stage('checkout') {
-      node('slave') {
+      steps {
         deleteDir()
         checkout scm
       }
-      // steps {
-      // }
     }
 
     // Build
