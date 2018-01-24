@@ -12,7 +12,7 @@ pipeline {
 
   stages {
     // checkout
-    stage('checkout') {
+    stage('Checkout') {
       steps {
         deleteDir()
         checkout scm
@@ -56,6 +56,12 @@ pipeline {
   }
 
   post {
+    always {
+      echo "Always"
+    }
+    changed {
+      echo "Changed"
+    }
     success {
       echo "Success"
     }
