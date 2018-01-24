@@ -10,18 +10,18 @@ pipeline {
     }
 
     stage('Static Code Analysis') {
-      sh "echo 'Run Static Code Analysis'"
+      bat "echo 'Run Static Code Analysis'"
     }
 
     stage('Unit Test') {
       steps {
-        sh "echo 'Run Unit Tests'"
+        bat "echo 'Run Unit Tests'"
       }
     }
 
     stage('Acceptance Tests') {
       steps {
-        sh "echo 'Run Acceptance Tests'"
+        bat "echo 'Run Acceptance Tests'"
       }
     }
   }
