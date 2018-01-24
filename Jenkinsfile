@@ -11,19 +11,19 @@ pipeline {
 
     stage('Static Code Analysis') {
       steps {
-        sh "echo 'Run Static Code Analysis'"
+        bat "npm run lint"
       }
     }
 
     stage('Unit Test') {
       steps {
-        sh "echo 'Run Unit Tests'"
+        bat "npm run test"
       }
     }
 
     stage('Acceptance Tests') {
       steps {
-        sh "echo 'Run Acceptance Tests'"
+        bat "npm run e2e"
       }
     }
   }
