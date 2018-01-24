@@ -10,7 +10,7 @@ pipeline {
   //   git_commit_author_email = ''
   // }
 
-  node('node') {
+  stages {
     // checkout
     stage('checkout') {
       steps {
