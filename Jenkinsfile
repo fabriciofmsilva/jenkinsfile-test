@@ -28,8 +28,18 @@ pipeline {
 
     // Static Code Analysis
     stage('Static Code Analysis') {
-      steps {
-        bat "npm run lint"
+      parallel {
+        stage('Angular') {
+          steps {
+            bat "npm run lint"
+          }
+        }
+
+        stage('Node') {
+          steps {
+            echo "Static Code Analysis:Node"
+          }
+        }
       }
     }
 
