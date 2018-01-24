@@ -17,13 +17,13 @@ pipeline {
 
     stage('Unit Test') {
       steps {
-        bat "echo 'Run Unit Tests'"
+        sh "echo 'Run Unit Tests'"
       }
     }
 
     stage('Acceptance Tests') {
       steps {
-        bat "echo 'Run Acceptance Tests'"
+        sh "echo 'Run Acceptance Tests'"
       }
     }
   }
